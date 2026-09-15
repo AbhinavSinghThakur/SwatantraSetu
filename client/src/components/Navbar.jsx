@@ -30,7 +30,7 @@ export default function Navbar() {
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
           <span className="brand-mark" aria-hidden>CC</span>
           <span>
-            <strong>Co-opConnect</strong>
+            <strong>Swatantra Setu </strong>
             <small>Cooperative Gig Services</small>
           </span>
         </Link>

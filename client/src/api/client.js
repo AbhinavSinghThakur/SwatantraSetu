@@ -22,6 +22,8 @@ async function request(path, options = {}) {
 export const api = {
   login: (email, password) => request('/auth/login', { method: 'POST', body: { email, password } }),
   register: (payload) => request('/auth/register', { method: 'POST', body: payload }),
+  verifyEmail: (email, otp) => request('/auth/verify-email', { method: 'POST', body: { email, otp } }),
+  resendOtp: (email) => request('/auth/resend-otp', { method: 'POST', body: { email } }),
   me: () => request('/auth/me'),
   workers: (params = {}) => {
     const qs = new URLSearchParams(params).toString();

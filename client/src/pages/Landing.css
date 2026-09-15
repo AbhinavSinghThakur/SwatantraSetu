@@ -18,7 +18,7 @@
 }
 
 .eyebrow {
-  color: var(--coop);
+  color: #2E1503;
   font-weight: 700;
   font-size: 0.88rem;
   margin-bottom: 0.75rem;
@@ -91,7 +91,7 @@
   flex-wrap: wrap;
   padding: 1rem;
   border-radius: 16px;
-  background: linear-gradient(135deg, #eef5fc, #e8f6f1);
+  background: #3D1A39;
 }
 
 .flow-node {
@@ -117,7 +117,7 @@
 }
 
 .flow-arrow {
-  color: var(--brand);
+  color: #fff;
   font-weight: 800;
 }
 

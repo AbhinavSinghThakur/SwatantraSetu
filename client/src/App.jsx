@@ -15,6 +15,7 @@ import Impact from './pages/Impact';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import VerifyEmail from './pages/VerifyEmail';
 import WorkerProfile from './pages/WorkerProfile';
 import BookingFlow from './pages/BookingFlow';
 import MobileApp from './pages/MobileApp';
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="verify-email" element={<VerifyEmail />} />
         <Route path="workers/:id" element={<WorkerProfile />} />
         <Route path="book/:workerId" element={<BookingFlow />} />
         <Route path="mobile" element={<MobileApp />} />

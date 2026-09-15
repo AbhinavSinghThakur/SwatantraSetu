@@ -39,7 +39,16 @@ export function AuthProvider({ children }) {
   const register = async (payload) => {
     setLoading(true);
     try {
-      const data = await api.register(payload);
+      return await api.register(payload);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const verifyEmail = async (email, otp) => {
+    setLoading(true);
+    try {
+      const data = await api.verifyEmail(email, otp);
       localStorage.setItem('cc_token', data.token);
       localStorage.setItem('cc_user', JSON.stringify(data.user));
       setUser(data.user);
@@ -55,7 +64,7 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
 
-  const value = useMemo(() => ({ user, loading, login, register, logout }), [user, loading]);
+  const value = useMemo(() => ({ user, loading, login, register, verifyEmail, logout }), [user, loading]);
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

@@ -30,6 +30,10 @@ npm run dev
 
 Without MongoDB, the API serves realistic in-memory sample data automatically.
 
+## Email verification
+
+New registrations receive a bcrypt-hashed, six-digit email OTP. Codes expire after five minutes, and resend requests are limited to one per 60 seconds. Copy `server/.env.example` to `server/.env` and set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, and `SMTP_FROM` before registering a new account. With `MONGODB_URI` configured, users and OTP metadata are stored by the existing Mongoose `User` model; without MongoDB, the existing in-memory demo mode is used.
+
 ## User Roles
 
 | Role | Access |

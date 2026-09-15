@@ -73,8 +73,8 @@ export function Register() {
     e.preventDefault();
     setError('');
     try {
-      const user = await register(form);
-      navigate(roleHome(user.role));
+      const data = await register(form);
+      navigate(`/verify-email?email=${encodeURIComponent(data.email)}`);
     } catch (err) {
       setError(err.message || 'Registration failed');
     }
