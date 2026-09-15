@@ -41,7 +41,7 @@ export default function Chatbot() {
         <div className="chat-panel card fade-up">
           <div className="chat-head">
             <div>
-              <strong>Co-opConnect Assist</strong>
+              <strong>Swatantra Setu Assist</strong>
               <span>AI support · Voice & multilingual</span>
             </div>
             <button type="button" onClick={() => setOpen(false)} aria-label="Close"><X size={18} /></button>

@@ -16,7 +16,7 @@ export function About() {
   return (
     <PageShell
       title="About the Cooperative Model"
-      lead="Co-opConnect is a cooperative-owned digital marketplace that digitizes Labour Cooperative Federations and Societies — not a private gig aggregator."
+      lead="Swatantra Setu is a cooperative-owned digital marketplace that digitizes Labour Cooperative Federations and Societies — not a private gig aggregator."
     >
       <div className="grid-2">
         <article className="card" style={{ padding: '1.25rem' }}>

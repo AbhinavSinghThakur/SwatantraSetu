@@ -66,7 +66,7 @@ export default function Navbar() {
             onClick={() => setLowData(!lowData)}
             title={t('lowData')}
           >
-            2G
+            5G+
           </button>
 
           {user ? (

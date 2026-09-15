@@ -1,8 +1,8 @@
-# Co-opConnect
+# Swatantra Setu
 
 **Cooperative Gig Services Platform for Household & Community Services**
 
-A production-ready MERN platform connecting verified cooperative workers with households, businesses, institutions and communities. Designed offline-first for low-connectivity (2G/3G) environments with SMS/USSD fallback workflows.
+A production-ready MERN platform connecting verified cooperative workers with households, businesses, institutions and communities. Designed offline-first for low-connectivity (4G/5G) environments with SMS/USSD fallback workflows.
 
 ## Tech Stack
 

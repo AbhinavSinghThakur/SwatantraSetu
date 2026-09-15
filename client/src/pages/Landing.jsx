@@ -21,7 +21,7 @@ export default function Landing() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy fade-up">
-            <div className="hero-brand">Co-opConnect</div>
+            <div className="hero-brand">Swatantra Setu</div>
             <p className="eyebrow">Cooperative Gig Services Platform for Household & Community Services</p>
             <h1>Trusted Local Workers. Powered by Cooperatives.</h1>
             <p className="hero-sub">
@@ -35,7 +35,7 @@ export default function Landing() {
               <Signal size={18} />
               <div>
                 <strong>{t('worksOffline')}</strong>
-                <span>Designed for 2G/3G, offline access and SMS-based service support.</span>
+                <span>Designed for 4G/5G+, offline access and SMS-based service support.</span>
               </div>
             </div>
           </div>

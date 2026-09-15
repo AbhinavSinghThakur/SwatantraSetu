@@ -46,7 +46,7 @@ export default function AppLayout() {
         <button type="button" className="side-brand" onClick={() => navigate('/')}>
           <span>CC</span>
           <div>
-            <strong>Co-opConnect</strong>
+            <strong>Swatantra Setu</strong>
             <small>{user?.role?.replace('_', ' ')}</small>
           </div>
         </button>

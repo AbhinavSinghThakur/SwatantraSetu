@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <div className="footer-brand">Co-opConnect</div>
+          <div className="footer-brand">Swatantra Setu</div>
           <p>Cooperative-owned digital service network for household and community services. Built for trust, worker empowerment and low-connectivity India.</p>
         </div>
         <div>
@@ -32,8 +32,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} Co-opConnect · National Labour Cooperative Federation partner platform</span>
-        <span>Designed for 2G/3G · Offline · SMS/USSD</span>
+        <span>© {new Date().getFullYear()} Swatantra Setu · National Labour Cooperative Federation partner platform</span>
+        <span>Designed for 4G/5G+ · Offline · SMS/USSD</span>
       </div>
     </footer>
   );

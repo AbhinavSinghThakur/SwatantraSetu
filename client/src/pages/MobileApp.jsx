@@ -51,7 +51,7 @@ export default function MobileApp() {
           <div className="phone">
             <div className="phone-notch" />
             <div className={`phone-status sync-${sync}`}>
-              <span>Co-opConnect</span>
+              <span>Swatantra Setu</span>
               <button type="button" onClick={() => setSync((s) => (s === 'synced' ? 'offline' : s === 'offline' ? 'syncing' : 'synced'))}>
                 {sync === 'offline' ? 'Offline' : sync === 'syncing' ? 'Syncing…' : 'Synced · 2m'}
               </button>

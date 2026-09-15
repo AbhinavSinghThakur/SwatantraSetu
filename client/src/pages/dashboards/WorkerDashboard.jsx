@@ -112,7 +112,7 @@ export default function WorkerDashboard() {
             </div>
             <label style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: '0.85rem' }}>
               <input type="checkbox" checked={lowData} onChange={(e) => setLowData(e.target.checked)} />
-              Low-data mode (2G/3G)
+              Low-data mode (4G/5G+)
             </label>
             <p style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>SMS fallback: reply YES/NO to job SMS when app data fails.</p>
           </section>
