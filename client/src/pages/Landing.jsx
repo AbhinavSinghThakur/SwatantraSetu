@@ -127,8 +127,29 @@ export default function Landing() {
             <p>Presentable to government departments, federations, NGOs, investors and technology partners.</p>
           </div>
           <div className="cta-actions">
-            <Link className="btn btn-primary btn-lg" to="/register">Get started</Link>
-            <Link className="btn btn-secondary btn-lg" to="/mobile">See mobile app</Link>
+           <Link
+  className="btn btn-primary btn-lg"
+  to="/register"
+  style={{
+    backgroundColor: "#3D1A39",
+    borderColor: "#3D1A39",
+    color: "white"
+  }}
+>
+  Get started
+</Link>
+
+<Link
+  className="btn btn-secondary btn-lg"
+  to="/mobile"
+  style={{
+    backgroundColor: "#3D1A39",
+    borderColor: "#3D1A39",
+    color: "white"
+  }}
+>
+  See mobile app
+</Link>
           </div>
         </div>
       </section>
