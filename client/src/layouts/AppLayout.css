@@ -1,0 +1,99 @@
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  background: #eef3f8;
+}
+
+.app-side {
+  background: #0f1b2d;
+  color: #d7e2ef;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.side-brand {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.side-brand span {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  background: linear-gradient(145deg, #0e4d92, #0b6e4f);
+  color: #fff;
+}
+
+.side-brand strong { display: block; color: #fff; }
+.side-brand small { color: #8aa0b8; text-transform: capitalize; }
+
+.app-side nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.app-side nav a {
+  padding: 0.7rem 0.85rem;
+  border-radius: 10px;
+  color: #b7c8da;
+  font-weight: 600;
+}
+
+.app-side nav a.active,
+.app-side nav a:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.side-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.side-foot .sync-indicator {
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  color: #fff;
+}
+
+.app-main {
+  padding: 1.25rem;
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+  .app-side {
+    position: relative;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .app-side nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .side-foot { width: 100%; }
+}

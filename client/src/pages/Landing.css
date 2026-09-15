@@ -1,0 +1,255 @@
+.landing .hero {
+  padding: 3.5rem 0 2rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--brand-dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.eyebrow {
+  color: var(--coop);
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  max-width: 18ch;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-size: 1.08rem;
+  max-width: 38rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1.25rem;
+}
+
+.connectivity-callout {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: var(--coop-soft);
+  border: 1px solid #bfe5d4;
+  color: var(--coop);
+  max-width: 34rem;
+}
+
+.connectivity-callout strong {
+  display: block;
+  color: var(--ink);
+}
+
+.connectivity-callout span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.flow-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 1.4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.flow-title {
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.flow-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #eef5fc, #e8f6f1);
+}
+
+.flow-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fff;
+  border-radius: 14px;
+  padding: 0.7rem 0.55rem;
+  min-width: 72px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.flow-node.platform {
+  outline: 2px solid var(--brand);
+}
+
+.flow-node.worker {
+  outline: 2px solid var(--coop);
+}
+
+.flow-arrow {
+  color: var(--brand);
+  font-weight: 800;
+}
+
+.flow-points {
+  list-style: none;
+  padding: 1rem 0 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.flow-points li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.trust-strip {
+  padding: 0 0 1rem;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background: #0f1b2d;
+  color: #fff;
+  border-radius: 20px;
+  padding: 1.4rem;
+}
+
+.trust-grid strong {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.trust-grid span {
+  color: #9fb4cb;
+  font-size: 0.85rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.service-tile {
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.service-tile strong { display: block; margin-bottom: 0.25rem; }
+.service-tile span { color: var(--muted); font-size: 0.78rem; }
+
+.section.alt {
+  background: rgba(255,255,255,0.55);
+}
+
+.section-head-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.pillar {
+  padding: 1.2rem;
+}
+
+.pillar h3 {
+  color: var(--brand);
+  margin-bottom: 0.4rem;
+}
+
+.cta-band {
+  padding-bottom: 5rem;
+}
+
+.cta-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0e4d92, #128277);
+  color: #fff;
+}
+
+.cta-inner h2 {
+  font-family: var(--font-display);
+  margin-bottom: 0.4rem;
+}
+
+.cta-inner p { color: rgba(255,255,255,0.85); margin: 0; }
+
+.cta-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cta-actions .btn-secondary {
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .trust-grid,
+  .cta-inner {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .section-head-row {
+    flex-direction: column;
+    align-items: start;
+  }
+}
