@@ -28,8 +28,29 @@ export default function Landing() {
               Book verified electricians, plumbers, cleaners, caregivers, drivers and other skilled workers through a cooperative-owned digital service network.
             </p>
             <div className="hero-cta">
-              <Link className="btn btn-primary btn-lg" to="/find-worker">{t('findService')} <ArrowRight size={18} /></Link>
-              <Link className="btn btn-secondary btn-lg" to="/register/worker">{t('joinWorker')}</Link>
+            <Link
+  className="btn btn-primary btn-lg"
+  to="/find-worker"
+  style={{
+    backgroundColor: "#3D1A39",
+    borderColor: "#3D1A39",
+    color: "white"
+  }}
+>
+  {t('findService')} <ArrowRight size={18} />
+</Link>
+
+<Link
+  className="btn btn-secondary btn-lg"
+  to="/register/worker"
+  style={{
+    backgroundColor: "#3D1A39",
+    borderColor: "#3D1A39",
+    color: "white"
+  }}
+>
+  {t('joinWorker')}
+</Link>
             </div>
             <div className="connectivity-callout">
               <Signal size={18} />
