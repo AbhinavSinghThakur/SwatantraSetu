@@ -28,7 +28,7 @@ export default function Navbar() {
     <header className="nav">
       <div className="nav-bar container">
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
-          <span className="brand-mark" aria-hidden>CC</span>
+          <span className="brand-mark" aria-hidden>SS</span>
           <span>
             <strong>Swatantra Setu </strong>
             <small>Cooperative Gig Services</small>
