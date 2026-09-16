@@ -3,20 +3,26 @@ import { Link } from 'react-router-dom';
 import { api } from '../api/client';
 
 const icons = {
-  electrician: '⚡', plumber: '🔧', carpenter: '🪵', painter: '🎨', cleaner: '✨',
-  domestic: '🏠', caregiver: '💛', driver: '🚗', gardener: '🌿', technician: '🛠️',
+  electrician: '🧑‍🔧', plumber: '👨‍🔧', carpenter: '🪚', painter: '🎨', cleaner: '🧹',
+  domestic: '🏠', caregiver: '🤱', driver: '🚗', gardener: '🌿', technician: '🛠️',
 };
 
 export default function Services() {
   const [services, setServices] = useState([]);
   useEffect(() => {
     api.services().then((r) => setServices(r.data || [])).catch(() => {
-      setServices([
-        { id: 'electrician', name: 'Electrician', nameHi: 'बिजली मिस्त्री' },
-        { id: 'plumber', name: 'Plumber', nameHi: 'प्लंबर' },
-        { id: 'cleaner', name: 'Cleaner', nameHi: 'सफाई कर्मी' },
-        { id: 'caregiver', name: 'Caregiver', nameHi: 'देखभालकर्ता' },
-      ]);
+     setServices([
+  { id: 'electrician', name: 'Electrician', nameHi: 'बिजली मिस्त्री' },
+  { id: 'plumber', name: 'Plumber', nameHi: 'प्लंबर' },
+  { id: 'carpenter', name: 'Carpenter', nameHi: 'बढ़ई' },
+  { id: 'painter', name: 'Painter', nameHi: 'पेंटर' },
+  { id: 'cleaner', name: 'Cleaner', nameHi: 'सफाई कर्मी' },
+  { id: 'domestic', name: 'Domestic Helper', nameHi: 'घरेलू सहायक' },
+  { id: 'caregiver', name: 'Caregiver', nameHi: 'देखभालकर्ता' },
+  { id: 'driver', name: 'Driver', nameHi: 'ड्राइवर' },
+  { id: 'gardener', name: 'Gardener', nameHi: 'माली' },
+  { id: 'technician', name: 'Technician', nameHi: 'तकनीशियन' },
+]);
     });
   }, []);
 
