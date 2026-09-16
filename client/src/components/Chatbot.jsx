@@ -29,7 +29,9 @@ export default function Chatbot() {
       const res = await api.aiChat(text, lang);
       setMessages((m) => [...m, { role: 'bot', text: res.data.reply }]);
     } catch {
+      console.error('Chat API error:', err);
       setMessages((m) => [...m, { role: 'bot', text: 'Network weak. Try SMS: BOOK ELECTRICIAN 110017 to 56767' }]);
+      
     } finally {
       setBusy(false);
     }
