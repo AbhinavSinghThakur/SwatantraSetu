@@ -11,5 +11,8 @@
     "seed": "npm run seed --prefix server",
     "build": "npm run build --prefix client",
     "start": "npm run start --prefix server"
+  },
+  "dependencies": {
+    "openai": "^7.16.0"
   }
 }

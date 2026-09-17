@@ -1,8 +1,17 @@
 import { Router } from 'express';
 import { store } from '../data/store.js';
 import { authRequired, requireRole } from '../middleware/auth.js';
+import OpenAI from 'openai';
 
 const router = Router();
+const openai=new OpenAI({
+  apiKey: process.env.OPEN_API_KEY,
+  baseURL: 'https://openrouter.ai/api/v1',
+  defaultHeaders: {
+    'HTTP-Referer': 'https://your-site-url.com', // optional but recommended, used for OpenRouter's leaderboard/rankings
+    'X-Title': 'Swatantra Setu'
+  }
+});
 
 router.get('/services', (_req, res) => {
   res.json({ data: store.services });
@@ -73,21 +82,62 @@ router.post('/ai/match', (req, res) => {
   });
 });
 
-router.post('/ai/chat', (req, res) => {
-  const message = String(req.body?.message || '').toLowerCase();
-  let reply =
-    'I can help you book a verified cooperative worker, check booking status, or enable SMS fallback. What do you need?';
-  if (message.includes('plumb') || message.includes('leak')) {
-    reply = 'For plumbing issues, I recommend Suresh Yadav (4.6★, 3.1 km). Shall I start an instant booking?';
-  } else if (message.includes('electric') || message.includes('power')) {
-    reply = 'Ramesh Kumar is available nearby (2.4 km, 4.8★). Emergency booking is also available.';
-  } else if (message.includes('sms') || message.includes('offline') || message.includes('network')) {
-    reply =
-      'Low connectivity mode: dial *789*# or SMS BOOK <SERVICE> <PINCODE> to 56767. Your last sync will keep worker profiles available offline.';
-  } else if (message.includes('price') || message.includes('rate')) {
-    reply = 'Typical starting rates: Electrician ₹350/visit, Plumber ₹300/visit, Cleaner ₹200/visit. Smart pricing adjusts for peak hours.';
+router.post('/ai/chat', async (req, res) => {
+  const message = String(req.body?.message || '').trim();
+  const lang = req.body?.lang || 'en';
+
+  if (!message) {
+    return res.status(400).json({ message: 'message is required' });
   }
-  res.json({ data: { reply, lang: req.body?.lang || 'en' } });
+
+  const availableWorkers = store.workers
+    .filter((w) => w.availability === 'available')
+    .slice(0, 20)
+    .map((w) => ({
+      name: w.name,
+      skill: w.skill,
+      city: w.city,
+      rating: w.rating,
+      distanceKm: w.distanceKm,
+      verified: w.verified,
+    }));
+
+  const systemPrompt = `You are a helpful assistant for a cooperative worker-booking platform.
+You help users find verified local workers (plumbers, electricians, cleaners, etc.), explain booking, pricing, and SMS/USSD fallback for low-connectivity users.
+
+Guidelines:
+- Be concise (2-3 sentences max).
+- If a user describes a problem (e.g. "my tap is leaking"), recommend a relevant, currently available worker from the list below if one fits.
+- If asked about offline/low-network options, mention: dial *789*# or SMS "BOOK <SERVICE> <PINCODE>" to 56767.
+- Typical starting rates: Electrician ₹350/visit, Plumber ₹300/visit, Cleaner ₹200/visit.
+- Reply in the language code: ${lang}.
+- Never invent worker names that aren't in the list provided.
+
+Available workers (JSON): ${JSON.stringify(availableWorkers)}`;
+
+  try {
+    const response = await openai.chat.completions.create({
+      model: 'openai/gpt-4o-mini',
+      max_tokens: 300,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: message },
+      ],
+    });
+
+    const reply = response.choices[0]?.message?.content?.trim() || '';
+
+    res.json({ data: { reply, lang } });
+  } catch (err) {
+    console.error('AI chat error:', err);
+    res.status(502).json({
+      data: {
+        reply:
+          'I\'m having trouble connecting right now. You can also dial *789*# or SMS BOOK <SERVICE> <PINCODE> to 56767.',
+        lang,
+      },
+    });
+  }
 });
 
 router.post('/sms/fallback', (req, res) => {
